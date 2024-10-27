@@ -96,14 +96,14 @@ void Game::update()
 void Game::drawInitScreen() {
     graphics::Brush br;
     br.outline_opacity = 0.0f;
-    graphics::setFont(std::string(ASSET_PATH) + "Text2.ttf");
+    graphics::setFont(std::string(ASSET_PATH) + "Aroma.ttf");
     br.texture = ASSET_PATH + std::string("Loading.png");
     graphics::drawRect(CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2, CANVAS_WIDTH, CANVAS_HEIGHT, br);
     graphics::setCanvasScaleMode(graphics::CANVAS_SCALE_FIT);
     SETCOLOR(br.fill_color, 1.0f, 1.0f, 1.0f);
-    graphics::drawText(230, 280, 55, "Press Space", br);
+    graphics::drawText(230, 280, 55, "Press Key Space", br);
     graphics::drawText(350, 370, 65, "OR", br);
-    graphics::drawText(230, 450, 60, "Left click ", br);
+    graphics::drawText(230, 450, 60, "  Left click ", br);
 }
 
 
@@ -148,7 +148,7 @@ void Game::drawPlayingScreen() {
 
     graphics::Brush br5;
     SETCOLOR(br5.fill_color, 1.49f, 2.03f, 0.64f);
-    graphics::setFont(std::string(ASSET_PATH) + "Brick Comic.ttf");
+    graphics::setFont(std::string(ASSET_PATH) + "Aroma.ttf");
 
     if (m_active_player != nullptr) {
         std::string x = std::string("Playing: ") + std::string(m_active_player->getName());
@@ -178,12 +178,12 @@ void Game::drawPlayingScreen() {
 void Game::drawEndScreen() {
     graphics::Brush br;
     br.outline_opacity = 0.0f;
-    graphics::setFont(ASSET_PATH + std::string("Brick Comic.ttf"));
+    graphics::setFont(ASSET_PATH + std::string("Aroma.ttf"));
     SETCOLOR(br.fill_color, 0.96f, 0.0f, 0.0f);
     graphics::drawRect(CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2, CANVAS_WIDTH, CANVAS_HEIGHT, br);
     SETCOLOR(br.fill_color, 1.0f, 1.0f, 1.0f);
     graphics::drawText(CANVAS_WIDTH / 4.5, CANVAS_HEIGHT / 8, 45, std::string(m_players.front()->getName()) + " Won the game!", br);
-    graphics::setFont(ASSET_PATH + std::string("Text2.ttf"));
+    graphics::setFont(ASSET_PATH + std::string("Aroma.ttf"));
     graphics::drawText(CANVAS_WIDTH / 4.5, CANVAS_HEIGHT / 1.10, 40, "Press  R  to Restart", br);
 
     graphics::Brush br1;
